@@ -19,15 +19,15 @@ class Inventory:
     def file_reader(path):
         if path.endswith(".csv"):
             with open(path, "r") as csv_file:
-                csv_reader = csv.DictReader(csv_file)
-                return [line for line in csv_reader]
+                return list(csv.DictReader(csv_file))
+                # return [line for line in csv_reader]
         elif path.endswith(".json"):
             with open(path, "r") as json_file:
-                json_reader = json.load(json_file)
-                return [line for line in json_reader]
+                return json.load(json_file)
+                # return [line for line in json_reader]
         elif path.endswith(".xml"):
             with open(path, "r") as xml_file:
-                xml_reader = xmltodict.parse(xml_file.read())
-                return [line for line in xml_reader["dataset"]["record"]]
+                return xmltodict.parse(xml_file.read())["dataset"]["record"]
+                # return [line for line in xml_reader["dataset"]["record"]]
         else:
             raise ValueError("Arquivo inválido")
