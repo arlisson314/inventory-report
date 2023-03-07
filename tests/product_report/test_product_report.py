@@ -1,18 +1,18 @@
 from inventory_report.inventory.product import Product
 
-producMock = {
+productMock = {
     "id": 1,
     "nome_do_produto": "Lama",
     "nome_da_empresa": "Vale",
     "data_de_fabricacao": "01/06/2022",
     "data_de_validade": "01/06/2023",
     "numero_de_serie": "1234567",
-    "instrucoes_de_armazenamento": "conservar longe de crianças do cão",
+    "instrucoes_de_armazenamento": "longe de crianças do cão",
 }
 
 
 def test_relatorio_produto():
-    produc = Product(**producMock)
+    produc = Product(**productMock)
     produc_data = str(produc)
 
     assert (isinstance(produc_data, str)) is True
