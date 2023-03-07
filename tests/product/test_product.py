@@ -1,7 +1,7 @@
 from inventory_report.inventory.product import Product
 
 
-producMock = {
+productMock = {
     "id": 1,
     "nome_do_produto": "Lama",
     "nome_da_empresa": "Vale",
@@ -14,16 +14,16 @@ producMock = {
 
 def test_cria_produto():
 
-    """** espalha o conteudo do producMock na instancia de Product"""
-    produc = Product(**producMock)
+    """** espalha o conteudo do productMock na instancia de Product"""
+    produc = Product(**productMock)
 
-    assert produc.id == producMock["id"]
-    assert produc.nome_do_produto == producMock["nome_do_produto"]
-    assert produc.nome_da_empresa == producMock["nome_da_empresa"]
-    assert produc.data_de_fabricacao == producMock["data_de_fabricacao"]
-    assert produc.data_de_validade == producMock["data_de_validade"]
-    assert produc.numero_de_serie == producMock["numero_de_serie"]
+    assert produc.id == productMock["id"]
+    assert produc.nome_do_produto == productMock["nome_do_produto"]
+    assert produc.nome_da_empresa == productMock["nome_da_empresa"]
+    assert produc.data_de_fabricacao == productMock["data_de_fabricacao"]
+    assert produc.data_de_validade == productMock["data_de_validade"]
+    assert produc.numero_de_serie == productMock["numero_de_serie"]
     assert (
         produc.instrucoes_de_armazenamento
-        == producMock["instrucoes_de_armazenamento"]
+        == productMock["instrucoes_de_armazenamento"]
     )
